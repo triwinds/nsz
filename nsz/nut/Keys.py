@@ -156,22 +156,3 @@ def load(fileName):
 	except BaseException as e:
 		Print.error(format_exc())
 		Print.error(str(e))
-
-
-
-keyScriptPath = Path(sys.argv[0])
-#While loop to get rid of things like C:\\Python37\\Scripts\\nsz.exe\\__main__.py
-while not keyScriptPath.is_dir():
-	keyScriptPath = keyScriptPath.parents[0]
-keypath = keyScriptPath.joinpath('keys.txt')
-dumpedKeys = Path.home().joinpath(".switch", "prod.keys")
-if keypath.is_file():
-	load(str(keypath))
-elif dumpedKeys.is_file():
-	load(str(dumpedKeys))
-else:
-	errorMsg = "{0} or {1} not found!\nPlease dump your keys using https://github.com/shchmue/Lockpick_RCM/releases".format(str(keypath), str(dumpedKeys))
-	Print.error(errorMsg)
-	input("Press Enter to exit...")
-	sys.exit(1)
-

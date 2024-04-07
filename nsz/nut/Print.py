@@ -10,25 +10,16 @@ enableDebug = False
 silent = False
 	
 def info(s, pleaseNoPrint = None):
-	if pleaseNoPrint == None:
-		sys.stdout.write(s + "\n")
-	else:
-		while pleaseNoPrint.value() > 0:
-			#print("Wait")
-			time.sleep(0.01)
-		pleaseNoPrint.increment()
-		sys.stdout.write(s + "\n")
-		sys.stdout.flush()
-		pleaseNoPrint.decrement()
+	pass
 	
 def infoNoNewline(s):
-	sys.stdout.write(s)
+	pass
 
 def error(s):
-	sys.stdout.write(s + "\n")
+	pass
 
 def warning(s):
-	sys.stdout.write(s + "\n")
+	pass
 
 def debug(s):
-	sys.stdout.write(s + "\n")
+	pass
